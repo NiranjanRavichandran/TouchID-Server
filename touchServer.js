@@ -54,7 +54,7 @@ router.route('/getDump')
     })
     .save()
     .then(function(data){
-
+        res.json({error: false, data: {message: "Success"}});
     })
     .catch(function (err) {
       res.status(500).json({error: true, data: {message: err.message}});
