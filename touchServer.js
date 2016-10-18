@@ -46,11 +46,11 @@ router.route('/getDump')
     var token = req.body.token;
     if(token == "bazzinga") {
       StudyData.forge({
-      user_id = req.body.userId;
-      app_id = req.body.appId;
-      action_id = req.body.actionId;
-      study_id = req.body.studyId;
-      time_taken = req.body.time;
+      user_id:req.body.userId;
+      app_id: req.body.appId;
+      action_id: req.body.actionId;
+      study_id: req.body.studyId;
+      time_taken: req.body.time;
     })
     .save()
     .then(fucntion(data){
