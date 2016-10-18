@@ -53,7 +53,7 @@ router.route('/getDump')
       time_taken: req.body.time,
     })
     .save()
-    .then(fucntion(data){
+    .then(function(data){
 
     })
     .catch(function (err) {
@@ -64,7 +64,7 @@ router.route('/getDump')
   }
 }); //End of post
 app.use('/api', router);
-app.get('/', funcntion(req, res){
+app.get('/', function(req, res){
   res.sendFile('main.html');
 });
 app.listen(3000, function() {
