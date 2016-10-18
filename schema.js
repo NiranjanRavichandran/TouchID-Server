@@ -5,6 +5,7 @@ var Schema = {
     action_id: {type: 'integer', nullable: true},
     user_id: {type: 'integer',nullable: false},
     time_taken: {type: 'float', nullable: false},
+    study_id: {type: 'integer', nullable: false},
     is_password: {type: 'boolean', nullable: false}
   }
 };

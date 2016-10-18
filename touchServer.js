@@ -36,9 +36,37 @@ router.route('/getDump')
     .then(function(collection){
       res.json({error: false, data: collecion.toJSON()});
     })
+    .catch(function (err) {
+      res.status(500).json({error: true, data: {message: err.message}});
+    });
   });
 
-app.use('/superStore/api', router);
+  router.route('/save')
+  .post(function(req, res){
+    var token = req.body.token;
+    if(token == "bazzinga") {
+      StudyData.forge({
+      user_id = req.body.userId;
+      app_id = req.body.appId;
+      action_id = req.body.actionId;
+      study_id = req.body.studyId;
+      time_taken = req.body.time;
+    })
+    .save()
+    .then(fucntion(data){
+
+    })
+    .catch(function (err) {
+      res.status(500).json({error: true, data: {message: err.message}});
+    });
+  }else {
+      res.json({error: true, data:{message: 'Invalid Token'}});
+  }
+}); //End of post
+app.use('/api', router);
+app.get('/', funcntion(req, res){
+  res.sendFile('main.html');
+});
 app.listen(3000, function() {
   console.log("✔ Express server listening on port %d in %s mode", 3000, app.get('env'));
 });
