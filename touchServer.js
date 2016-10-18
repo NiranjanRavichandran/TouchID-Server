@@ -34,7 +34,7 @@ router.route('/getDump')
     StudyDataCollection.forge()
     .fetch()
     .then(function(collection){
-      res.json({error: false, data: collecion.toJSON()});
+      res.json({error: false, data: collection.toJSON()});
     })
     .catch(function (err) {
       res.status(500).json({error: true, data: {message: err.message}});
