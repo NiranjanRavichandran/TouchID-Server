@@ -65,7 +65,7 @@ router.route('/getDump')
 }); //End of post
 app.use('/api', router);
 app.get('/', function(req, res){
-  res.sendFile('main.html');
+  res.sendFile('TouchID-Server/main.html');
 });
 app.listen(3000, function() {
   console.log("✔ Express server listening on port %d in %s mode", 3000, app.get('env'));
