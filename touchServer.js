@@ -43,8 +43,9 @@ router.route('/getDump')
 
   router.route('/save')
   .post(function(req, res){
-    console.log('@@@',req);
+    console.log('@@@',req.body);
     var token = req.body.token;
+    console.log('###',req.body.token);
     if(token == "bazzinga") {
       StudyData.forge({
       user_id:req.body.userId,
