@@ -3,7 +3,7 @@ var Schema = {
     id:{type: 'increments', nullable: false, primary: true},
     app_id: {type: 'integer', nullable: false},
     action_id: {type: 'integer', nullable: true},
-    user_id: {type: 'String',nullable: false},
+    user_id: {type: 'string',nullable: false},
     time_taken: {type: 'float', nullable: false},
     study_id: {type: 'integer', nullable: false},
     is_password: {type: 'boolean', nullable: false}
