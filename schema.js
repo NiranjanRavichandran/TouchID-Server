@@ -10,9 +10,11 @@ var Schema = {
     is_password: {type: 'boolean', nullable: false}
   },
   users: {
+    id:{type: 'increments', nullable: false, primary: true},
     user_id:{type: 'string', nullable: false, unique: true},
     password:{type: 'string', nullable: false},
     group_id:{type: 'integer', nullable: false},
+    app_id:{'integer', nullable: false},
     fname:{type: 'string', nullable: false},
     lname:{type: 'string', nullable: false},
     other_user1:{type: 'string', nullable: true},

@@ -100,7 +100,8 @@ router.route('/Users')
     other_user4: req.body.user4,
     other_user5: req.body.user5,
     other_user6: req.body.user6,
-    group_id: req.body.groupId
+    group_id: req.body.groupId,
+    app_id: req.body.appId
   })
   .save()
   .then(function(data){
@@ -112,6 +113,25 @@ router.route('/Users')
 }else {
     res.json({error: true, data:{message: 'Invalid Token'}});
 }
+});
+
+router.route('/getUser')
+.post(function(req, res){
+  User.forge({
+    user_id: req.body.userId,
+    app_id: req.body.appId
+  })
+  .fetch()
+  .then(function(user){
+    if(!user) {
+      res.status(500).json({error: true, data: {message: "User does not exist"}});
+    }else {
+      res.json({error: false, data: {user: user.toJSON()}});
+    }
+  })
+  .catch(function (err) {
+      res.status(500).json({error: true, data: {message: err.message}});
+    });
 });
 
 router.route('/login')
