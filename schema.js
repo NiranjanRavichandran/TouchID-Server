@@ -14,7 +14,7 @@ var Schema = {
     user_id:{type: 'string', nullable: false, unique: true},
     password:{type: 'string', nullable: false},
     group_id:{type: 'integer', nullable: false},
-    app_id:{'integer', nullable: false},
+    app_id:{type: 'integer', nullable: false},
     fname:{type: 'string', nullable: false},
     lname:{type: 'string', nullable: false},
     other_user1:{type: 'string', nullable: true},
